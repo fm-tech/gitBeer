@@ -1,0 +1,36 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <% if (employee !== null) { %>
+        <h1>Employee</h1>
+        <p><%= employee.fName + employee.lName %></p>
+<!-- Start form  -->
+<p><%= employee.fName %></p>
+<p>Employee ID : <%= employee.eID %></p>
+<p>did get beer? : <%= employee.hasBeer %></p>
+<p>is over 21 : <%= employee.isOfAge %></p>
+<!-- end form -->
+<% } else { %> 
+    <h1> That Employee does not exist go back <a href="/"> or try again...</a></h1>
+<% } %>
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+  <div class="jumbotron">
+      <h1>Employee</h1>
+      <h3>Welcome to templating using EJS</h3>
+<!-- Start form  -->
+
+<form action="/emp/<%= employee.eID %>/update?_method=PUT" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Employee ID</label>
+    <input type="number" name="employee[eID]" class="form-control" placeholder="EmployeeID">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Name</label>
+    <input type="text" name="employee[fName]" placeholder="First Name">
+    <input type="text" name="employee[lName]" placeholder="Last Name">
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="employee[hasBeer]" value="0" <% if( !employee.hasBeer) { %> checked <% } %> >
+    <label class="form-check-label" for="false">
+      Did not Get Beer
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="employee[hasBeer]"  value="1" <% if( employee.hasBeer) { %> checked <% } %>>
+    <label class="form-check-label" for="true">
+      Has Beer
+    </label>
+
+    <div class="form-check">
+    
+      <h2>is over 21 : <span> <%= employee.isOfAge %> </span> </h2>
+
+      </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<!-- end form -->
+  </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

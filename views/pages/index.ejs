@@ -1,0 +1,37 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Employee</h1>
+        <p>Welcome to templating using EJS</p>
+<!-- Start form  -->
+<form action="/search" method="POST">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Employee ID</label>
+      <input type="number" name="employee[eID]" class="form-control" placeholder="EmployeeID">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+
+    </form>
+<!-- end form -->
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
